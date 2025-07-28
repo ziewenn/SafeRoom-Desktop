@@ -1,0 +1,168 @@
+/* --- GENEL STİLLER --- */
+.main-pane {
+    -fx-background-color: #1e293b; /* slate-800 */
+}
+.page-container {
+    -fx-padding: 32px;
+}
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-family: "System Bold";
+    -fx-text-fill: white;
+}
+
+/* --- GİRİŞ EKRANI STİLLERİ --- */
+.login-background { -fx-background-color: #0f172a; }
+.login-pane {
+    -fx-background-color: rgba(15, 23, 42, 0.5);
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: rgba(59, 130, 246, 0.2);
+    -fx-effect: dropshadow(gaussian, rgba(147, 51, 234, 0.1), 30, 0, 0, 0);
+}
+.logo-icon { -fx-stroke: #22d3ee; -fx-stroke-width: 0.5; -fx-scale-x: 4.0; -fx-scale-y: 4.0; }
+.title-label { -fx-font-family: "System Bold"; -fx-font-size: 36px; -fx-text-fill: white; }
+.subtitle-label { -fx-font-size: 14px; -fx-text-fill: #94a3b8; }
+.input-field {
+    -fx-background-color: rgba(30, 41, 59, 0.5);
+    -fx-background-radius: 8px;
+    -fx-border-color: #475569;
+    -fx-border-radius: 8px;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-font-size: 16px;
+    -fx-padding: 15px;
+}
+.input-field:focused { -fx-border-color: #22d3ee; }
+.login-button {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #a855f7);
+    -fx-background-radius: 8px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.login-button:hover { -fx-background-color: linear-gradient(to right, #60a5fa, #c084fc); }
+.footer-label { -fx-text-fill: #64748b; }
+.signup-link { -fx-text-fill: #22d3ee; -fx-border-color: transparent; }
+.signup-link:hover { -fx-underline: true; }
+
+
+/* --- ANA ARAYÜZ STİLLERİ (GÜNCELLENDİ) --- */
+.sidebar { -fx-background-color: #0f172a; }
+.sidebar-header { -fx-border-color: #334155; -fx-border-width: 0 0 1px 0; }
+.sidebar-logo-icon { -fx-stroke: #2563eb; -fx-stroke-width: 1.5; }
+.sidebar-title { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white; }
+.sidebar-nav { -fx-padding: 16px; -fx-spacing: 8px; }
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #94a3b8; /* Yazı rengi */
+    -fx-font-size: 14px;
+    -fx-pref-width: 100%;
+    -fx-padding: 12px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+    -fx-content-display: left; /* İkon ve yazıyı hizala */
+    -fx-alignment: center-left; /* İçeriği sola yasla */
+    -fx-graphic-text-gap: 12px; /* İkon ile yazı arasındaki boşluk */
+}
+.nav-icon { -fx-stroke: #94a3b8; -fx-fill: transparent; -fx-stroke-width: 1.5; }
+.nav-button:hover { -fx-background-color: #334155; -fx-text-fill: white; }
+.nav-button:hover .nav-icon { -fx-stroke: white;}
+.nav-button.active { -fx-background-color: rgba(59, 130, 246, 0.2); -fx-text-fill: white; }
+.nav-button.active .nav-icon { -fx-stroke: #60a5fa; }
+
+.sidebar-footer { -fx-padding: 16px; -fx-border-color: #1e293b; -fx-border-width: 1px 0 0 0; }
+.user-avatar { -fx-background-color: #a855f7; -fx-background-radius: 50%; -fx-pref-width: 40px; -fx-pref-height: 40px; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-alignment: center; }
+.user-name { -fx-font-weight: bold; -fx-text-fill: white; }
+.user-status { -fx-font-size: 12px; -fx-text-fill: #4ade80; }
+
+.content-pane { -fx-background-color: #1e293b; }
+.header-bar { -fx-background-color: #0f172a; -fx-border-color: #334155; -fx-border-width: 0 0 1px 0; }
+.view-title { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white; }
+.search-field { -fx-background-color: #334155; -fx-text-fill: white; -fx-prompt-text-fill: #64748b; -fx-background-radius: 8px; -fx-border-color: transparent; -fx-padding: 8px 12px; }
+.icon-button { -fx-background-color: transparent; -fx-cursor: hand; }
+.header-icon { -fx-stroke: #94a3b8; -fx-fill: transparent; -fx-stroke-width: 1.5; }
+.icon-button:hover .header-icon { -fx-stroke: white; }
+.action-button { -fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-padding: 8px 16px; -fx-cursor: hand; }
+.action-button-icon { -fx-stroke: white; -fx-stroke-width: 2; }
+.action-button:hover { -fx-background-color: #3b82f6; }
+.content-scroll-pane, .content-scroll-pane > .viewport { -fx-background-color: transparent; }
+
+/* --- DASHBOARD STİLLERİ (GÜNCELLENDİ) --- */
+.welcome-banner {
+    -fx-background-color: #0f172a; /* Solid, darker background */
+    -fx-background-radius: 20px;
+    -fx-padding: 32px;
+    -fx-border-color: #334155;
+    -fx-border-radius: 20px;
+}
+.welcome-title { -fx-font-size: 28px; -fx-font-family: "System Bold"; -fx-text-fill: white; }
+.welcome-subtitle { -fx-font-size: 14px; -fx-text-fill: #94a3b8; }
+
+.action-card {
+    -fx-background-color: #0f172a; /* Solid, darker background */
+    -fx-background-radius: 16px;
+    -fx-padding: 24px;
+    -fx-border-color: #334155;
+    -fx-border-radius: 16px;
+    -fx-spacing: 10px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}
+.action-card:hover {
+    -fx-border-color: #22d3ee;
+    -fx-effect: dropshadow(gaussian, rgba(34, 211, 238, 0.2), 20, 0, 0, 0);
+}
+.action-card-icon-container { -fx-background-color: #1e293b; -fx-background-radius: 8px; -fx-padding: 8px; -fx-max-width: 40px; }
+.action-card-icon-container SVGPath { -fx-stroke: #22d3ee; -fx-stroke-width: 1.5; -fx-fill: transparent; }
+.action-card-title { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white; }
+.action-card-description { -fx-font-size: 12px; -fx-text-fill: #94a3b8; }
+
+.activity-list {
+    -fx-background-color: #0f172a; /* Solid, darker background */
+    -fx-background-radius: 16px;
+    -fx-border-color: #334155;
+    -fx-border-radius: 16px;
+    -fx-padding: 8px;
+}
+.activity-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cbd5e1;
+    -fx-padding: 12px;
+    -fx-background-radius: 8px;
+}
+.activity-list .list-cell:hover {
+    -fx-background-color: #1e293b;
+}
+
+/* --- PENCERE KONTROL BUTONLARI STİLLERİ --- */
+.window-button, .window-button-close {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px;
+    -fx-cursor: hand;
+}
+
+.window-icon {
+    -fx-stroke: #94a3b8; /* slate-400 */
+    -fx-stroke-width: 2;
+}
+
+.window-button:hover {
+    -fx-background-color: #334155; /* slate-700 */
+}
+
+.window-button:hover .window-icon {
+    -fx-stroke: white;
+}
+
+.window-button-close:hover {
+    -fx-background-color: #ef4444; /* red-500 */
+}
+
+.window-button-close:hover .window-icon {
+    -fx-stroke: white;
+}

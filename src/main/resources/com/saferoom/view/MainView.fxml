@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saferoom.controller.MainController">
+    <left>
+        <VBox prefWidth="288.0" styleClass="sidebar">
+            <children>
+                <!-- Logo ve Başlık -->
+                <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="12.0" styleClass="sidebar-header">
+                    <children>
+                        <Pane prefHeight="32.0" prefWidth="32.0">
+                            <children>
+                                <SVGPath content="M12 2L2 7V17L12 22L22 17V7L12 2Z M16.5 8C16.5 10 15 11 12 12C9 13 7.5 14 7.5 16" styleClass="sidebar-logo-icon" />
+                            </children>
+                        </Pane>
+                        <Label styleClass="sidebar-title" text="SafeRoom" />
+                    </children>
+                    <padding>
+                        <Insets left="16.0" />
+                    </padding>
+                </HBox>
+                <!-- Menü Butonları -->
+                <VBox fx:id="navBox" styleClass="sidebar-nav" VBox.vgrow="ALWAYS">
+                    <children>
+                        <JFXButton fx:id="dashboardButton" alignment="CENTER_LEFT" graphicTextGap="12.0" styleClass="nav-button" text="Dashboard" prefWidth="256.0">
+                            <graphic>
+                                <StackPane prefHeight="18.0" prefWidth="18.0">
+                                    <children><SVGPath content="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" styleClass="nav-icon" /></children>
+                                </StackPane>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="messagesButton" alignment="CENTER_LEFT" graphicTextGap="12.0" styleClass="nav-button" text="Messages" prefWidth="256.0">
+                            <graphic>
+                                <StackPane prefHeight="18.0" prefWidth="18.0">
+                                    <children><SVGPath content="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" styleClass="nav-icon" /></children>
+                                </StackPane>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="friendsButton" alignment="CENTER_LEFT" graphicTextGap="12.0" styleClass="nav-button" text="Friends" prefWidth="256.0">
+                            <graphic>
+                                <StackPane prefHeight="18.0" prefWidth="18.0">
+                                    <children><SVGPath content="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM23 21v-2a4 4 0 0 0-3-3.87" styleClass="nav-icon" /></children>
+                                </StackPane>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="fileVaultButton" alignment="CENTER_LEFT" graphicTextGap="12.0" styleClass="nav-button" text="File Vault" prefWidth="256.0">
+                            <graphic>
+                                <StackPane prefHeight="18.0" prefWidth="18.0">
+                                    <children><SVGPath content="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M12 18v-6 M10 14h4" styleClass="nav-icon" /></children>
+                                </StackPane>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="settingsButton" alignment="CENTER_LEFT" graphicTextGap="12.0" styleClass="nav-button" text="Settings" prefWidth="256.0">
+                            <graphic>
+                                <StackPane prefHeight="18.0" prefWidth="18.0">
+                                    <children><SVGPath content="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" styleClass="nav-icon" /></children>
+                                </StackPane>
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </VBox>
+                <VBox styleClass="sidebar-footer">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <children>
+                                <Label styleClass="user-avatar" text="U" />
+                                <VBox>
+                                    <children>
+                                        <Label styleClass="user-name" text="Username" />
+                                        <Label styleClass="user-status" text="Online" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <BorderPane styleClass="content-pane">
+            <top>
+                <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="16.0" styleClass="header-bar" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="viewTitleLabel" styleClass="view-title" text="Dashboard" />
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <TextField promptText="Search..." styleClass="search-field" />
+                        <JFXButton styleClass="icon-button">
+                            <graphic><SVGPath content="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9 M10.3 21a1.94 1.94 0 0 0 3.4 0" styleClass="header-icon"/></graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="newRoomButton" styleClass="action-button" text="New Room">
+                            <graphic><SVGPath content="M12 5v14m-7-7h14" styleClass="action-button-icon"/></graphic>
+                        </JFXButton>
+                        <!-- Pencere Kontrol Butonları -->
+                        <HBox alignment="CENTER_RIGHT" spacing="5.0">
+                            <children>
+                                <JFXButton fx:id="minimizeButton" styleClass="window-button">
+                                    <graphic><SVGPath content="M5 12h14" styleClass="window-icon" /></graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="maximizeButton" styleClass="window-button">
+                                    <graphic><SVGPath content="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" styleClass="window-icon" /></graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="closeButton" styleClass="window-button-close">
+                                    <graphic><SVGPath content="M18 6 6 18M6 6l12 12" styleClass="window-icon" /></graphic>
+                                </JFXButton>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets left="32.0" right="16.0" />
+                    </padding>
+                </HBox>
+            </top>
+            <center>
+                <ScrollPane fx:id="contentArea" fitToWidth="true" hbarPolicy="NEVER" styleClass="content-scroll-pane" BorderPane.alignment="CENTER" />
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>

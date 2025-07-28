@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.layout.Pane?>
+
+<!-- Action Card Ana Konteyneri -->
+<VBox styleClass="action-card" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saferoom.controller.cards.ActionCardController">
+    <children>
+        <StackPane fx:id="iconContainer" styleClass="action-card-icon-container">
+            <children>
+                <SVGPath fx:id="iconPath" />
+            </children>
+        </StackPane>
+        <Label fx:id="titleLabel" styleClass="action-card-title" text="Title" />
+        <Label fx:id="descriptionLabel" styleClass="action-card-description" text="Description" />
+    </children>
+</VBox>

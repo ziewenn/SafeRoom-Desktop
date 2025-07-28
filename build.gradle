@@ -1,0 +1,55 @@
+plugins {
+    // Java projeleri için temel eklenti
+    id 'java'
+    // Uygulamayı çalıştırılabilir hale getiren eklenti
+    id 'application'
+    // JavaFX projeleri için özel eklenti
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+// Projenin grup ve versiyon bilgileri
+group = 'com.saferoom'
+version = '1.0'
+
+// Projenin Java 17 kullanacağını belirtiyoruz
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    // Gerekli kütüphanelerin indirileceği merkezi depo
+    mavenCentral()
+}
+
+// JavaFX versiyonunu bir değişkende tutuyoruz
+def javafxVersion = '17.0.10'
+
+dependencies {
+    // --- ARAYÜZ KÜTÜPHANELERİ ---
+    // JavaFX'in temel modüllerini projemize ekliyoruz
+    implementation "org.openjfx:javafx-controls:${javafxVersion}"
+    implementation "org.openjfx:javafx-fxml:${javafxVersion}"
+    implementation "org.openjfx:javafx-graphics:${javafxVersion}"
+    implementation "org.openjfx:javafx-web:${javafxVersion}"
+
+    // JFoenix (Materyal Tasarım JavaFX UI Kütüphanesi)
+    implementation 'com.jfoenix:jfoenix:9.0.10'
+
+    // --- BACKEND & NETWORK KÜTÜPHANELERİ ---
+    // gRPC ve Protobuf gibi diğer tüm kütüphaneler buraya eklenecek
+    // Şimdilik sadece arayüz için gerekli olanları ekliyoruz.
+}
+
+application {
+    // Uygulama başlatıldığında hangi sınıfın çalışacağını belirtiyoruz
+    // Bu sınıfı bir sonraki adımda oluşturacağız
+    mainClass = 'com.saferoom.MainApp'
+}
+
+javafx {
+    // Kullandığımız JavaFX versiyonu
+    version = javafxVersion
+    // Projemizin ihtiyaç duyduğu JavaFX modülleri
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.web' ]
+}
