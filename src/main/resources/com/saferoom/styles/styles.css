@@ -1,4 +1,6 @@
-/* --- GENEL STİLLER --- */
+/* =================================================================
+   GENEL STİLLER
+   ================================================================= */
 .main-pane {
     -fx-background-color: #1e293b; /* slate-800 */
 }
@@ -11,7 +13,9 @@
     -fx-text-fill: white;
 }
 
-/* --- GİRİŞ EKRANI STİLLERİ --- */
+/* =================================================================
+   GİRİŞ EKRANI STİLLERİ
+   ================================================================= */
 .login-background { -fx-background-color: #0f172a; }
 .login-pane {
     -fx-background-color: rgba(15, 23, 42, 0.5);
@@ -48,7 +52,9 @@
 .signup-link:hover { -fx-underline: true; }
 
 
-/* --- ANA ARAYÜZ STİLLERİ (GÜNCELLENDİ) --- */
+/* =================================================================
+   ANA ARAYÜZ STİLLERİ
+   ================================================================= */
 .sidebar { -fx-background-color: #0f172a; }
 .sidebar-header { -fx-border-color: #334155; -fx-border-width: 0 0 1px 0; }
 .sidebar-logo-icon { -fx-stroke: #2563eb; -fx-stroke-width: 1.5; }
@@ -57,22 +63,20 @@
 
 .nav-button {
     -fx-background-color: transparent;
-    -fx-text-fill: #94a3b8; /* Yazı rengi */
-    -fx-font-size: 14px;
-    -fx-pref-width: 100%;
-    -fx-padding: 12px;
-    -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
+    -fx-text-fill: #a0a0a0;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-padding: 14px 20px;
+    -fx-alignment: center-left;
     -fx-cursor: hand;
-    -fx-content-display: left; /* İkon ve yazıyı hizala */
-    -fx-alignment: center-left; /* İçeriği sola yasla */
-    -fx-graphic-text-gap: 12px; /* İkon ile yazı arasındaki boşluk */
+    -fx-background-radius: 12px;
+    -fx-graphic-text-gap: 16px;
 }
-.nav-icon { -fx-stroke: #94a3b8; -fx-fill: transparent; -fx-stroke-width: 1.5; }
+.nav-icon { -fx-icon-size: 18px; -fx-icon-color: #94a3b8; }
 .nav-button:hover { -fx-background-color: #334155; -fx-text-fill: white; }
-.nav-button:hover .nav-icon { -fx-stroke: white;}
+.nav-button:hover .nav-icon { -fx-icon-color: white; }
 .nav-button.active { -fx-background-color: rgba(59, 130, 246, 0.2); -fx-text-fill: white; }
-.nav-button.active .nav-icon { -fx-stroke: #60a5fa; }
+.nav-button.active .nav-icon { -fx-icon-color: #60a5fa; }
 
 .sidebar-footer { -fx-padding: 16px; -fx-border-color: #1e293b; -fx-border-width: 1px 0 0 0; }
 .user-avatar { -fx-background-color: #a855f7; -fx-background-radius: 50%; -fx-pref-width: 40px; -fx-pref-height: 40px; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-alignment: center; }
@@ -84,16 +88,18 @@
 .view-title { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white; }
 .search-field { -fx-background-color: #334155; -fx-text-fill: white; -fx-prompt-text-fill: #64748b; -fx-background-radius: 8px; -fx-border-color: transparent; -fx-padding: 8px 12px; }
 .icon-button { -fx-background-color: transparent; -fx-cursor: hand; }
-.header-icon { -fx-stroke: #94a3b8; -fx-fill: transparent; -fx-stroke-width: 1.5; }
-.icon-button:hover .header-icon { -fx-stroke: white; }
+.header-icon { -fx-icon-size: 18px; -fx-icon-color: #94a3b8; }
+.icon-button:hover .header-icon { -fx-icon-color: white; }
 .action-button { -fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-padding: 8px 16px; -fx-cursor: hand; }
-.action-button-icon { -fx-stroke: white; -fx-stroke-width: 2; }
+.action-button-icon { -fx-icon-size: 14px; -fx-icon-color: white; }
 .action-button:hover { -fx-background-color: #3b82f6; }
 .content-scroll-pane, .content-scroll-pane > .viewport { -fx-background-color: transparent; }
 
-/* --- DASHBOARD STİLLERİ (GÜNCELLENDİ) --- */
+/* =================================================================
+   DASHBOARD STİLLERİ
+   ================================================================= */
 .welcome-banner {
-    -fx-background-color: #0f172a; /* Solid, darker background */
+    -fx-background-color: #0f172a;
     -fx-background-radius: 20px;
     -fx-padding: 32px;
     -fx-border-color: #334155;
@@ -103,7 +109,7 @@
 .welcome-subtitle { -fx-font-size: 14px; -fx-text-fill: #94a3b8; }
 
 .action-card {
-    -fx-background-color: #0f172a; /* Solid, darker background */
+    -fx-background-color: #0f172a;
     -fx-background-radius: 16px;
     -fx-padding: 24px;
     -fx-border-color: #334155;
@@ -122,7 +128,7 @@
 .action-card-description { -fx-font-size: 12px; -fx-text-fill: #94a3b8; }
 
 .activity-list {
-    -fx-background-color: #0f172a; /* Solid, darker background */
+    -fx-background-color: #0f172a;
     -fx-background-radius: 16px;
     -fx-border-color: #334155;
     -fx-border-radius: 16px;
@@ -138,31 +144,136 @@
     -fx-background-color: #1e293b;
 }
 
-/* --- PENCERE KONTROL BUTONLARI STİLLERİ --- */
+/* =================================================================
+   PENCERE KONTROL BUTONLARI STİLLERİ
+   ================================================================= */
 .window-button, .window-button-close {
     -fx-background-color: transparent;
     -fx-background-radius: 5px;
     -fx-padding: 8px;
     -fx-cursor: hand;
 }
+.window-icon { -fx-icon-size: 14px; -fx-icon-color: #94a3b8; }
+.window-button:hover { -fx-background-color: #334155; }
+.window-button:hover .window-icon { -fx-icon-color: white; }
+.window-button-close:hover { -fx-background-color: #ef4444; }
+.window-button-close:hover .window-icon { -fx-icon-color: white; }
 
-.window-icon {
-    -fx-stroke: #94a3b8; /* slate-400 */
-    -fx-stroke-width: 2;
+/* =================================================================
+   MESSAGES EKRANI STİLLERİ
+   ================================================================= */
+.messages-container {
+    -fx-background-color: #0f172a;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #334155;
 }
-
-.window-button:hover {
-    -fx-background-color: #334155; /* slate-700 */
+.contact-list-pane {
+    -fx-min-width: 320px;
+    -fx-max-width: 320px;
+    -fx-border-color: transparent #334155 transparent transparent;
 }
-
-.window-button:hover .window-icon {
-    -fx-stroke: white;
+.search-box-container {
+    -fx-padding: 16px;
+    -fx-border-color: transparent transparent #334155 transparent;
 }
-
-.window-button-close:hover {
-    -fx-background-color: #ef4444; /* red-500 */
+.contact-list-view {
+    -fx-background-color: transparent;
+    -fx-padding: 0 8px;
 }
-
-.window-button-close:hover .window-icon {
-    -fx-stroke: white;
+.contact-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-background-radius: 12px;
+    -fx-padding: 12px;
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 0 4px;
+    -fx-border-color: transparent;
 }
+.contact-list-view .list-cell:hover {
+    -fx-background-color: #1e293b;
+}
+.contact-list-view .list-cell:selected {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #2563eb;
+}
+.contact-avatar {
+    -fx-background-color: #2563eb;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+.contact-name { -fx-font-weight: bold; -fx-text-fill: white; }
+.contact-last-message { -fx-text-fill: #94a3b8; }
+.contact-time { -fx-font-size: 10px; -fx-text-fill: #64748b; }
+.unread-badge {
+    -fx-background-color: #2563eb;
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2px 6px;
+}
+.chat-header {
+    -fx-padding: 22px 24px;
+    -fx-border-color: transparent transparent #334155 transparent;
+    -fx-spacing: 10px;
+}
+.chat-partner-name { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white; }
+.status-online { -fx-text-fill: #4ade80; }
+.status-offline { -fx-text-fill: #64748b; }
+.message-list-view {
+    -fx-background-color: transparent;
+    -fx-padding: 24px;
+}
+.message-list-view .list-cell {
+    -fx-padding: 4px 0;
+    -fx-background-color: transparent;
+}
+.message-bubble {
+    -fx-padding: 12px 16px;
+    -fx-text-fill: white;
+}
+.message-bubble.sent {
+    -fx-background-color: #2563eb;
+    -fx-background-radius: 20px 20px 4px 20px;
+}
+.message-bubble.received {
+    -fx-background-color: #334155;
+    -fx-background-radius: 20px 20px 20px 4px;
+}
+.message-avatar {
+    -fx-background-color: #2563eb;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+.chat-input-area {
+    -fx-padding: 16px 24px;
+    -fx-spacing: 16px;
+    -fx-border-color: #334155 transparent transparent transparent;
+}
+.chat-input-field {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 20px;
+    -fx-border-color: #475569;
+    -fx-border-radius: 20px;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-font-size: 14px;
+    -fx-padding: 12px 20px;
+}
+.chat-input-field:focused {
+    -fx-border-color: #22d3ee;
+}
+.input-area-icon { -fx-icon-color: #94a3b8; -fx-icon-size: 20px; }
+.send-button { -fx-background-color: #2563eb; -fx-background-radius: 50%; -fx-padding: 14px; }
+.send-button:hover { -fx-background-color: #3b82f6; }
+.send-icon { -fx-icon-color: white; -fx-icon-size: 18px; }

@@ -33,6 +33,11 @@ dependencies {
     implementation "org.openjfx:javafx-graphics:${javafxVersion}"
     implementation "org.openjfx:javafx-web:${javafxVersion}"
 
+    //İcon kutuphaneleri
+    // build.gradle dosyasındaki dependencies bloğuna ekle
+    implementation 'org.kordamp.ikonli:ikonli-javafx:12.3.1'
+    implementation 'org.kordamp.ikonli:ikonli-fontawesome5-pack:12.3.1'
+
     // JFoenix (Materyal Tasarım JavaFX UI Kütüphanesi)
     implementation 'com.jfoenix:jfoenix:9.0.10'
 
