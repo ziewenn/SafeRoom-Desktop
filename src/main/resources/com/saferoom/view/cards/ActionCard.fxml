@@ -3,23 +3,25 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.SVGPath?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <!--
-  YAPILAN DEĞİŞİKLİK:
-  İçeriğin dikey olarak esnemesine neden olan <Pane VBox.vgrow="ALWAYS" /> kaldırıldı.
-  Artık ikon ve metinler, kartın boyutu ne olursa olsun, her zaman bir arada
-  ve üstte hizalı duracaklar.
+  YAPILAN DEĞİŞİKLİKLER:
+  - İkonları sola yaslamak için StackPane'e alignment="TOP_LEFT" eklendi.
 -->
-<VBox spacing="10.0" styleClass="action-card" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saferoom.controller.cards.ActionCardController">
+<VBox spacing="15.0" styleClass="action-card" alignment="TOP_LEFT" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saferoom.controller.cards.ActionCardController">
     <children>
-        <StackPane fx:id="iconContainer" styleClass="action-card-icon-container">
+        <!-- DÜZELTME: StackPane'e alignment="TOP_LEFT" eklendi -->
+        <StackPane fx:id="iconContainer" styleClass="action-card-icon-container" alignment="TOP_LEFT">
             <children>
-                <SVGPath fx:id="iconPath" />
+                <FontIcon fx:id="icon" styleClass="action-card-icon" />
             </children>
         </StackPane>
-        <Label fx:id="titleLabel" styleClass="action-card-title" text="Title" />
-        <Label fx:id="descriptionLabel" styleClass="action-card-description" text="Description" />
+        <VBox spacing="5.0">
+            <children>
+                <Label fx:id="titleLabel" styleClass="action-card-title" text="Title" />
+                <Label fx:id="descriptionLabel" styleClass="action-card-description" text="Description" />
+            </children>
+        </VBox>
     </children>
 </VBox>

@@ -2,12 +2,12 @@ package com.saferoom.controller.cards;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.shape.SVGPath;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 public class ActionCardController {
 
     @FXML
-    private SVGPath iconPath;
+    private FontIcon icon;
 
     @FXML
     private Label titleLabel;
@@ -18,12 +18,12 @@ public class ActionCardController {
     /**
      * Bu metod, DashboardController tarafından çağrılarak
      * her bir kartın ikonunu, başlığını ve açıklamasını ayarlar.
-     * @param svgContent SVG ikonunun path verisi
+     * @param iconLiteral FontAwesome ikon kodu (örn: "fas-plus")
      * @param title Kartın başlığı
      * @param description Kartın açıklaması
      */
-    public void setData(String svgContent, String title, String description) {
-        iconPath.setContent(svgContent);
+    public void setData(String iconLiteral, String title, String description) {
+        icon.setIconLiteral(iconLiteral);
         titleLabel.setText(title);
         descriptionLabel.setText(description);
     }

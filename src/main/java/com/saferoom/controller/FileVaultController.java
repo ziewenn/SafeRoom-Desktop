@@ -1,8 +1,12 @@
 package com.saferoom.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.saferoom.model.VaultFile;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.Dragboard;
@@ -15,18 +19,28 @@ import javafx.scene.layout.VBox;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FileVaultController {
 
     @FXML private VBox dropZone;
     @FXML private TilePane fileGrid;
+    @FXML private HBox fileFilterBar;
+
+    private final ObservableList<VaultFile> allFiles = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
         setupDragAndDrop();
         loadSampleFiles();
+        setupFilterButtons();
+
+        // Başlangıçta "All" filtresini aktif yap ve tüm dosyaları göster
+        if (!fileFilterBar.getChildren().isEmpty()) {
+            fileFilterBar.getChildren().get(0).getStyleClass().add("active");
+            updateFileGrid("All");
+        }
     }
 
     private void setupDragAndDrop() {
@@ -52,14 +66,53 @@ public class FileVaultController {
     }
 
     private void loadSampleFiles() {
-        List<VaultFile> files = new ArrayList<>();
-        files.add(new VaultFile("project_phoenix_brief.pdf", "2.1 MB", "2025-07-26"));
-        files.add(new VaultFile("quantum_encryption_keys.dat", "128 KB", "2025-07-24"));
-        files.add(new VaultFile("secure_room_logs_archive.zip", "15.8 MB", "2025-07-23"));
-        files.add(new VaultFile("meeting_notes_alpha.docx", "786 KB", "2025-07-22"));
-        files.add(new VaultFile("asset_pack_v2.rar", "1.2 GB", "2025-07-21"));
+        // Örnek dosyalara tür bilgisi eklendi
+        allFiles.addAll(
+                new VaultFile("project_phoenix_brief.pdf", "2.1 MB", "2025-07-26", "Documents"),
+                new VaultFile("quantum_encryption_keys.dat", "128 KB", "2025-07-24", "Documents"),
+                new VaultFile("secure_room_logs_archive.zip", "15.8 MB", "2025-07-23", "Archives"),
+                new VaultFile("meeting_notes_alpha.docx", "786 KB", "2025-07-22", "Documents"),
+                new VaultFile("asset_pack_v2.rar", "1.2 GB", "2025-07-21", "Archives"),
+                new VaultFile("logo_final.png", "1.5 MB", "2025-07-20", "Images")
+        );
+    }
 
-        for (VaultFile file : files) {
+    /**
+     * Filtre butonlarına tıklama olaylarını ve 'active' stil yönetimini ekler.
+     */
+    private void setupFilterButtons() {
+        for (Node node : fileFilterBar.getChildren()) {
+            if (node instanceof JFXButton) {
+                JFXButton button = (JFXButton) node;
+                button.setOnAction(event -> {
+                    // Önce tüm butonlardan 'active' stilini kaldır
+                    fileFilterBar.getChildren().forEach(btn -> btn.getStyleClass().remove("active"));
+                    // Sadece tıklanan butona 'active' stilini ekle
+                    button.getStyleClass().add("active");
+                    // Dosya gridini güncelle
+                    updateFileGrid(button.getText());
+                });
+            }
+        }
+    }
+
+    /**
+     * Seçilen filtreye göre dosya gridini günceller.
+     */
+    private void updateFileGrid(String filter) {
+        fileGrid.getChildren().clear();
+        List<VaultFile> filteredFiles;
+
+        if (filter.equalsIgnoreCase("All")) {
+            filteredFiles = allFiles;
+        } else {
+            // Filtre metniyle dosya türünü karşılaştır
+            filteredFiles = allFiles.stream()
+                    .filter(file -> file.getType().equalsIgnoreCase(filter))
+                    .collect(Collectors.toList());
+        }
+
+        for (VaultFile file : filteredFiles) {
             fileGrid.getChildren().add(createFileCard(file));
         }
     }

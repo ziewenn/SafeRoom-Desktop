@@ -1,5 +1,7 @@
 /* =================================================================
    1. GENEL STİLLER
+   - Bu bölüm, uygulama genelinde kullanılacak temel stilleri içerir.
+   - Ana panel renkleri, yazı tipleri ve genel sayfa yapısı burada tanımlanır.
    ================================================================= */
 .main-pane {
     -fx-background-color: #1e293b; /* slate-800 */
@@ -226,7 +228,7 @@
     -fx-padding: 24px;
     -fx-border-color: #334155;
     -fx-border-radius: 16px;
-    -fx-spacing: 10px;
+    -fx-spacing: 20px;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
 }
@@ -234,10 +236,23 @@
     -fx-border-color: #22d3ee;
     -fx-effect: dropshadow(gaussian, rgba(34, 211, 238, 0.2), 20, 0, 0, 0);
 }
-.action-card-icon-container { -fx-background-color: #1e293b; -fx-background-radius: 8px; -fx-padding: 8px; -fx-max-width: 40px; }
-.action-card-icon-container SVGPath { -fx-stroke: #22d3ee; -fx-stroke-width: 1.5; -fx-fill: transparent; }
-.action-card-title { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white; }
-.action-card-description { -fx-font-size: 12px; -fx-text-fill: #94a3b8; }
+.action-card-icon-container {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.action-card-icon {
+    -fx-icon-color: #22d3ee;
+    -fx-icon-size: 28px;
+}
+.action-card-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.action-card-description {
+    -fx-font-size: 16px;
+    -fx-text-fill: #94a3b8;
+}
 
 .activity-list {
     -fx-background-color: #0f172a;
@@ -427,12 +442,8 @@
     -fx-background-radius: 8px;
     -fx-cursor: hand;
 }
-.filter-button:hover {
-    -fx-background-color: #334155;
-    -fx-text-fill: white;
-}
-.filter-button.active {
-    -fx-background-color: #1e293b;
+.filter-button:hover, .filter-button.active {
+    -fx-background-color: linear-gradient(to right, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4));
     -fx-text-fill: white;
 }
 .friends-list-view .list-cell:filled:hover {
@@ -628,14 +639,14 @@
     -fx-border-width: 1 0 0 0;
 }
 .settings-toggle {
-    -jfx-toggle-color: #1fdc2d;
+    -jfx-toggle-color: #a855f7;
     -jfx-untoggle-color: #475569;
 }
 .settings-slider .track {
     -fx-background-color: #475569;
 }
 .settings-slider .thumb {
-    -fx-background-color: #16e31f;
+    -fx-background-color: #12d815;
 }
 .danger-button {
     -fx-background-color: transparent;

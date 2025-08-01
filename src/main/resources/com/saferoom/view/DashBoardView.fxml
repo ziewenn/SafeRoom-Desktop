@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+
 <!--
   YAPILAN DEĞİŞİKLİK:
   - "Quick Actions" VBox'ındaki GridPane'e VBox.vgrow="ALWAYS" eklendi.
