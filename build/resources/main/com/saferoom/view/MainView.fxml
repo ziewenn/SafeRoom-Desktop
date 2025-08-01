@@ -80,7 +80,7 @@
         </VBox>
     </left>
     <center>
-        <BorderPane styleClass="content-pane">
+        <BorderPane styleClass="content-pane" >
             <top>
                 <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="16.0" styleClass="header-bar" BorderPane.alignment="CENTER">
                     <children>
@@ -123,7 +123,14 @@
                 </HBox>
             </top>
             <center>
-                <ScrollPane fx:id="contentArea" fitToWidth="true" hbarPolicy="NEVER" styleClass="content-scroll-pane" BorderPane.alignment="CENTER" />
+                <ScrollPane fx:id="contentArea"
+                            fitToWidth="true"
+                            fitToHeight="true"
+                            hbarPolicy="NEVER"
+                            vbarPolicy="AS_NEEDED"
+                            styleClass="content-scroll-pane"
+                            BorderPane.alignment="CENTER" />
+
             </center>
         </BorderPane>
     </center>

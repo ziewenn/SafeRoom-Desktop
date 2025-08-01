@@ -1,6 +1,5 @@
 package com.saferoom;
 
-import com.saferoom.utils.ResizeHelper;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.net.URL; // URL import'u eklendi
 import java.util.Objects;
 
 public class MainApp extends Application {
@@ -18,15 +18,22 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(MainApp.class.getResource("view/LoginView.fxml")));
-        primaryStage.setTitle("SafeRoom");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(MainApp.class.getResource("/com/saferoom/view/LoginView.fxml")));
 
-
-
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setTitle("SafeRoom - Login");
 
         Scene scene = new Scene(root);
 
-        scene.getStylesheets().add(Objects.requireNonNull(MainApp.class.getResource("styles/styles.css")).toExternalForm());
+        // DEĞİŞİKLİK: CSS dosyasının adı, projenizdeki 'styles.css' ile eşleşmesi için güncellendi.
+        String cssPath = "/com/saferoom/styles/styles.css";
+        URL cssUrl = MainApp.class.getResource(cssPath);
+
+        if (cssUrl == null) {
+            System.err.println("HATA: CSS dosyası bulunamadı. Lütfen 'resources/com/saferoom/styles/' klasöründe 'styles.css' adında bir dosya olduğundan emin olun.");
+        } else {
+            scene.getStylesheets().add(cssUrl.toExternalForm());
+        }
 
         // Pencereyi fare ile sürüklenebilir hale getiriyoruz.
         root.setOnMousePressed(event -> {
@@ -38,10 +45,8 @@ public class MainApp extends Application {
             primaryStage.setY(event.getScreenY() - yOffset);
         });
 
-        // DÜZELTME: Sahneyi pencereye atadıktan sonra yeniden boyutlandırma özelliğini ekliyoruz.
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
-        ResizeHelper.addResizeListener(primaryStage); // Bu satır setScene'den sonraya taşındı.
-
         primaryStage.show();
     }
 

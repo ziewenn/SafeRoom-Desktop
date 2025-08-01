@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.layout.AnchorPane?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -9,50 +10,64 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<!-- Ana Konteyner: HBox, sol ve sağ panelleri yan yana dizer -->
-<HBox styleClass="messages-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saferoom.controller.MessagesController">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.saferoom.controller.MessagesController">
     <children>
-        <!-- Sol Taraf: Kişi Listesi Paneli -->
-        <VBox styleClass="contact-list-pane" HBox.hgrow="NEVER">
+        <VBox styleClass="page-container" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
             <children>
-                <HBox styleClass="search-box-container">
+                <HBox styleClass="messages-container" VBox.vgrow="ALWAYS">
                     <children>
-                        <TextField promptText="Search messages..." styleClass="search-field" HBox.hgrow="ALWAYS" />
+                        <!-- SOL PANEL -->
+                        <VBox styleClass="contact-list-pane" HBox.hgrow="NEVER">
+                            <children>
+                                <HBox styleClass="search-box-container">
+                                    <children>
+                                        <TextField promptText="Search messages..." styleClass="search-field" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                                <ListView fx:id="contactListView" styleClass="contact-list-view" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+
+                        <!-- SAĞ PANEL -->
+                        <BorderPane styleClass="message-pane" HBox.hgrow="ALWAYS">
+                            <top>
+                                <HBox alignment="CENTER_LEFT" styleClass="chat-header" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label fx:id="chatPartnerNameLabel" styleClass="chat-partner-name" />
+                                        <Label fx:id="chatPartnerStatusLabel" styleClass="chat-partner-status" />
+                                    </children>
+                                </HBox>
+                            </top>
+
+                            <center>
+                                <VBox BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+                                    <ListView fx:id="messageListView" styleClass="message-list-view" VBox.vgrow="ALWAYS" />
+                                </VBox>
+                            </center>
+
+                            <bottom>
+                                <HBox alignment="CENTER" styleClass="chat-input-area" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <JFXButton styleClass="icon-button">
+                                            <graphic>
+                                                <FontIcon iconLiteral="fas-plus" styleClass="input-area-icon" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <TextField fx:id="messageInputField" promptText="Type a secure message..." styleClass="chat-input-field" HBox.hgrow="ALWAYS" />
+                                        <JFXButton fx:id="sendButton" styleClass="send-button">
+                                            <graphic>
+                                                <FontIcon iconLiteral="fas-paper-plane" styleClass="send-icon" />
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </HBox>
+                            </bottom>
+                        </BorderPane>
                     </children>
                 </HBox>
-                <ListView fx:id="contactListView" styleClass="contact-list-view" VBox.vgrow="ALWAYS" />
             </children>
         </VBox>
-        <!-- Sağ Taraf: Sohbet Paneli -->
-        <BorderPane HBox.hgrow="ALWAYS">
-            <top>
-                <HBox alignment="CENTER_LEFT" styleClass="chat-header" BorderPane.alignment="CENTER">
-                    <children>
-                        <Label fx:id="chatPartnerNameLabel" styleClass="chat-partner-name" />
-                        <Label fx:id="chatPartnerStatusLabel" styleClass="chat-partner-status" />
-                    </children>
-                </HBox>
-            </top>
-            <center>
-                <ListView fx:id="messageListView" styleClass="message-list-view" BorderPane.alignment="CENTER" />
-            </center>
-            <bottom>
-                <HBox alignment="CENTER" styleClass="chat-input-area" BorderPane.alignment="CENTER">
-                    <children>
-                        <JFXButton styleClass="icon-button">
-                            <graphic>
-                                <FontIcon iconLiteral="fas-paperclip" styleClass="input-area-icon" />
-                            </graphic>
-                        </JFXButton>
-                        <TextField fx:id="messageInputField" promptText="Type a secure message..." styleClass="chat-input-field" HBox.hgrow="ALWAYS" />
-                        <JFXButton fx:id="sendButton" styleClass="send-button">
-                            <graphic>
-                                <FontIcon iconLiteral="fas-paper-plane" styleClass="send-icon" />
-                            </graphic>
-                        </JFXButton>
-                    </children>
-                </HBox>
-            </bottom>
-        </BorderPane>
     </children>
-</HBox>
+</AnchorPane>

@@ -67,23 +67,20 @@ public class MessagesController {
         messageListView.setCellFactory(param -> new MessageCell());
     }
 
-    // Kişi listesinden birine tıklandığında çalışacak olan listener
     private void setupContactSelectionListener() {
         contactListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                // Başlığı güncelle
                 chatPartnerNameLabel.setText(newSelection.getName());
                 chatPartnerStatusLabel.setText(newSelection.getStatus());
                 chatPartnerStatusLabel.getStyleClass().removeAll("status-online", "status-offline");
                 chatPartnerStatusLabel.getStyleClass().add(newSelection.isOnline() ? "status-online" : "status-offline");
 
-                // Mesaj listesini güncelle
                 messageListView.setItems(messagesMap.get(newSelection.getName()));
             }
         });
     }
 
-    // Kişi listesi için özel hücre (ListCell) sınıfı
+    // 🔧 GÜNCELLENMİŞ: Kişi listesi için özel hücre sınıfı (boş hücrelerde hover iptal)
     static class ContactCell extends ListCell<Contact> {
         private final HBox hbox = new HBox(15);
         private final Label avatar = new Label();
@@ -116,6 +113,12 @@ public class MessagesController {
             super.updateItem(contact, empty);
             if (empty || contact == null) {
                 setGraphic(null);
+                setText(null);
+                setStyle("");
+                setDisable(true);
+                setMouseTransparent(true);
+                setOnMouseEntered(null);
+                setOnMouseExited(null);
             } else {
                 avatar.setText(contact.getAvatarChar());
                 nameLabel.setText(contact.getName());
@@ -130,6 +133,8 @@ public class MessagesController {
                 }
 
                 setGraphic(hbox);
+                setDisable(false);
+                setMouseTransparent(false);
             }
         }
     }
@@ -143,8 +148,8 @@ public class MessagesController {
         public MessageCell() {
             super();
             avatar.getStyleClass().add("message-avatar");
-            messageText.setWrapText(true); // Metinlerin alt satıra geçmesini sağlar
-            hbox.setMaxWidth(450); // Mesaj balonlarının maksimum genişliği
+            messageText.setWrapText(true);
+            hbox.setMaxWidth(450);
         }
 
         @Override
@@ -165,6 +170,7 @@ public class MessagesController {
                     hbox.getChildren().setAll(avatar, messageText);
                     messageText.getStyleClass().setAll("message-bubble", "received");
                 }
+
                 setGraphic(hbox);
             }
         }

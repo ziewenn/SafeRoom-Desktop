@@ -9,7 +9,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<!-- Ana Dashboard Konteyneri -->
+<!--
+  YAPILAN DEĞİŞİKLİK:
+  - "Quick Actions" VBox'ındaki GridPane'e VBox.vgrow="ALWAYS" eklendi.
+  - RowConstraints'e prefHeight="150" eklenerek kartların dikey olarak daha fazla yer kaplaması sağlandı.
+  - GridPane'deki maxWidth kaldırıldı.
+-->
 <VBox spacing="30.0" styleClass="page-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saferoom.controller.DashboardController">
     <children>
         <!-- "Welcome Back" Banner'ı -->
@@ -19,7 +24,7 @@
                 <Label styleClass="welcome-subtitle" text="You have 2 new notifications and 1 pending room invite." />
             </children>
         </VBox>
-        <!-- Ana İçerik Alanı (Hızlı Eylemler ve Son Aktiviteler) -->
+        <!-- Ana İçerik Alanı -->
         <HBox spacing="30.0" VBox.vgrow="ALWAYS">
             <children>
                 <!-- Sol Taraf: Hızlı Eylemler -->
@@ -28,15 +33,14 @@
                         <Label styleClass="section-title" text="Quick Actions" />
                         <GridPane hgap="20.0" vgap="20.0" VBox.vgrow="ALWAYS">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <!-- Action Card'ları fx:include ile dahil ediyoruz -->
                                 <fx:include fx:id="newMeetingCard" source="cards/ActionCard.fxml" />
                                 <fx:include fx:id="joinRoomCard" source="cards/ActionCard.fxml" GridPane.columnIndex="1" />
                                 <fx:include fx:id="scheduleRoomCard" source="cards/ActionCard.fxml" GridPane.rowIndex="1" />
