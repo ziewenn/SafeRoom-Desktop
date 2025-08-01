@@ -29,12 +29,6 @@ public class MainController {
     @FXML private JFXButton fileVaultButton;
     @FXML private JFXButton settingsButton;
 
-    // Pencere kontrol butonları
-    @FXML private JFXButton minimizeButton;
-    @FXML private JFXButton maximizeButton;
-    @FXML private JFXButton closeButton;
-
-
     @FXML
     public void initialize() {
         // Uygulama açıldığında Dashboard'u yükle ve aktif butonu ayarla
@@ -46,14 +40,6 @@ public class MainController {
         friendsButton.setOnAction(event -> handleFriends());
         fileVaultButton.setOnAction(event -> handleFileVault());
         settingsButton.setOnAction(event -> handleSettings());
-
-        // Pencere kontrol butonlarının olaylarını ayarla
-        minimizeButton.setOnAction(event -> getStage().setIconified(true));
-        maximizeButton.setOnAction(event -> {
-            Stage stage = getStage();
-            stage.setMaximized(!stage.isMaximized());
-        });
-        closeButton.setOnAction(event -> getStage().close());
     }
 
     private void handleDashboard() {
@@ -77,15 +63,14 @@ public class MainController {
     private void handleFileVault() {
         setActiveButton(fileVaultButton);
         viewTitleLabel.setText("File Vault");
-        // TODO: "FileVaultView.fxml" dosyasını yükle
-        // loadView("FileVaultView.fxml");
+        loadView("FileVaultView.fxml");
     }
 
     private void handleSettings() {
         setActiveButton(settingsButton);
         viewTitleLabel.setText("Settings");
-        // TODO: "SettingsView.fxml" dosyasını yükle
-        // loadView("SettingsView.fxml");
+        // DÜZELTME: "SettingsView.fxml" dosyasını yükle
+        loadView("SettingsView.fxml");
     }
 
     /**

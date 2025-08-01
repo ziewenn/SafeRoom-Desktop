@@ -31,7 +31,7 @@
                         <Insets left="16.0" />
                     </padding>
                 </HBox>
-                <!-- Menü Butonları (Ikonli ile güncellendi) -->
+                <!-- Menü Butonları -->
                 <VBox fx:id="navBox" styleClass="sidebar-nav" VBox.vgrow="ALWAYS">
                     <children>
                         <JFXButton fx:id="dashboardButton" alignment="CENTER_LEFT" graphicTextGap="12.0" styleClass="nav-button" text="Dashboard" prefWidth="256.0">
@@ -97,25 +97,7 @@
                                 <FontIcon iconLiteral="fas-plus" styleClass="action-button-icon" />
                             </graphic>
                         </JFXButton>
-                        <HBox alignment="CENTER_RIGHT" spacing="5.0">
-                            <children>
-                                <JFXButton fx:id="minimizeButton" styleClass="window-button">
-                                    <graphic>
-                                        <FontIcon iconLiteral="fas-minus" styleClass="window-icon" />
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton fx:id="maximizeButton" styleClass="window-button">
-                                    <graphic>
-                                        <FontIcon iconLiteral="far-square" styleClass="window-icon" />
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton fx:id="closeButton" styleClass="window-button-close">
-                                    <graphic>
-                                        <FontIcon iconLiteral="fas-times" styleClass="window-icon" />
-                                    </graphic>
-                                </JFXButton>
-                            </children>
-                        </HBox>
+                        <!-- Pencere Kontrol Butonları HBox'ı Buradan Kaldırıldı -->
                     </children>
                     <padding>
                         <Insets left="32.0" right="16.0" />
