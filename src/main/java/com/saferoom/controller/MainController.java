@@ -69,8 +69,7 @@ public class MainController {
     public void handleRooms() {
         setActiveButton(roomsButton);
         viewTitleLabel.setText("Rooms");
-        // TODO: "RoomsView.fxml" dosyasını yükle
-        // loadView("RoomsView.fxml");
+        loadView("RoomsView.fxml");
     }
 
     private void handleMessages() {
