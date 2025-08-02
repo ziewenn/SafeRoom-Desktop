@@ -18,42 +18,42 @@ public class RoomsController implements Initializable {
     private TextField searchTextField;
 
     @FXML
-    private VBox serverListContainer;
+    private VBox hubListContainer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
-            filterServers(newValue);
+            filterHubs(newValue);
         });
     }
 
-    private void filterServers(String searchText) {
+    private void filterHubs(String searchText) {
         String lowerCaseSearchText = searchText.toLowerCase();
-        for (Node node : serverListContainer.getChildren()) {
+        for (Node node : hubListContainer.getChildren()) {
             if (node instanceof AnchorPane) {
-                AnchorPane serverItem = (AnchorPane) node;
-                Label serverNameLabel = findServerNameLabel(serverItem);
+                AnchorPane hubItem = (AnchorPane) node;
+                Label hubNameLabel = findHubNameLabel(hubItem);
 
-                if (serverNameLabel != null) {
-                    String serverName = serverNameLabel.getText().toLowerCase();
-                    if (serverName.contains(lowerCaseSearchText)) {
-                        serverItem.setVisible(true);
-                        serverItem.setManaged(true);
+                if (hubNameLabel != null) {
+                    String hubName = hubNameLabel.getText().toLowerCase();
+                    if (hubName.contains(lowerCaseSearchText)) {
+                        hubItem.setVisible(true);
+                        hubItem.setManaged(true);
                     } else {
-                        serverItem.setVisible(false);
-                        serverItem.setManaged(false);
+                        hubItem.setVisible(false);
+                        hubItem.setManaged(false);
                     }
                 }
             }
         }
     }
 
-    private Label findServerNameLabel(AnchorPane serverItem) {
-        for (Node node : serverItem.getChildren()) {
+    private Label findHubNameLabel(AnchorPane hubItem) {
+        for (Node node : hubItem.getChildren()) {
             if (node instanceof HBox) {
                 HBox hbox = (HBox) node;
                 for (Node childNode : hbox.getChildren()) {
-                    if (childNode.getStyleClass().contains("server-name")) {
+                    if (childNode.getStyleClass().contains("hub-name")) {
                         return (Label) childNode;
                     }
                 }

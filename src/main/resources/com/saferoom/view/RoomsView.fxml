@@ -18,44 +18,44 @@
             <ColumnConstraints hgrow="ALWAYS" />
             <ColumnConstraints />
         </columnConstraints>
-        <TextField fx:id="searchTextField" promptText="Search for a server..." styleClass="input-field" GridPane.columnIndex="0" />
+        <TextField fx:id="searchTextField" promptText="Search for a hub..." styleClass="input-field" GridPane.columnIndex="0" />
         <Button text="Create New Hub" styleClass="action-button" GridPane.columnIndex="2" />
     </GridPane>
-    <VBox fx:id="serverListContainer" spacing="15.0" alignment="TOP_LEFT">
-        <AnchorPane styleClass="server-item">
+    <VBox fx:id="hubListContainer" spacing="15.0" alignment="TOP_LEFT">
+        <AnchorPane styleClass="hub-item">
             <HBox spacing="10.0" alignment="CENTER_LEFT" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-                <Label text="🚀" styleClass="server-icon" />
-                <Label text="Project Overlord" styleClass="server-name" />
+                <Label text="🚀" styleClass="hub-icon" />
+                <Label text="Project Overlord" styleClass="hub-name" />
             </HBox>
-            <Label text="118 members" styleClass="server-people" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
+            <Label text="118 members" styleClass="hub-members" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
         </AnchorPane>
-        <AnchorPane styleClass="server-item">
+        <AnchorPane styleClass="hub-item">
             <HBox spacing="10.0" alignment="CENTER_LEFT" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-                <Label text="🛡️" styleClass="server-icon" />
-                <Label text="Aegis Defense Network" styleClass="server-name" />
+                <Label text="🛡️" styleClass="hub-icon" />
+                <Label text="Aegis Defense Network" styleClass="hub-name" />
             </HBox>
-            <Label text="256 members" styleClass="server-people" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
+            <Label text="256 members" styleClass="hub-members" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
         </AnchorPane>
-        <AnchorPane styleClass="server-item">
+        <AnchorPane styleClass="hub-item">
             <HBox spacing="10.0" alignment="CENTER_LEFT" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-                <Label text="🦅" styleClass="server-icon" />
-                <Label text="Griffin Tactical" styleClass="server-name" />
+                <Label text="🦅" styleClass="hub-icon" />
+                <Label text="Griffin Tactical" styleClass="hub-name" />
             </HBox>
-            <Label text="72 members" styleClass="server-people" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
+            <Label text="72 members" styleClass="hub-members" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
         </AnchorPane>
-        <AnchorPane styleClass="server-item">
+        <AnchorPane styleClass="hub-item">
             <HBox spacing="10.0" alignment="CENTER_LEFT" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-                <Label text="🌐" styleClass="server-icon" />
-                <Label text="Vanguard Operations" styleClass="server-name" />
+                <Label text="🌐" styleClass="hub-icon" />
+                <Label text="Vanguard Operations" styleClass="hub-name" />
             </HBox>
-            <Label text="431 members" styleClass="server-people" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
+            <Label text="431 members" styleClass="hub-members" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
         </AnchorPane>
-        <AnchorPane styleClass="server-item">
+        <AnchorPane styleClass="hub-item">
             <HBox spacing="10.0" alignment="CENTER_LEFT" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-                <Label text="📡" styleClass="server-icon" />
-                <Label text="Cyber Sentry Hub" styleClass="server-name" />
+                <Label text="📡" styleClass="hub-icon" />
+                <Label text="Cyber Sentry Hub" styleClass="hub-name" />
             </HBox>
-            <Label text="89 members" styleClass="server-people" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
+            <Label text="89 members" styleClass="hub-members" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
         </AnchorPane>
     </VBox>
 </VBox>
