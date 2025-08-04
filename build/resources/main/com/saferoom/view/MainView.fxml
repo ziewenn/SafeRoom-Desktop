@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXB                        </JFXButton>
+                    </children>
+                </VBox>
+                <!-- User Info Section -->
+                <VBox styleClass="sidebar-footer">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <children>
+                                <Label styleClass="user-avatar" text="U" />
+                                <VBox>
+                                    <children>
+                                        <Label styleClass="user-name" text="Username" />
+                                        <Label styleClass="user-status" text="Online" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -17,18 +38,14 @@
         <VBox prefWidth="288.0" styleClass="sidebar">
             <children>
                 <!-- Logo ve Başlık -->
-                <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="12.0" styleClass="sidebar-header">
+                <HBox alignment="CENTER" prefHeight="70.0" styleClass="sidebar-header">
                     <children>
-                        <Pane prefHeight="32.0" prefWidth="32.0">
+                        <Pane prefHeight="40.0" prefWidth="40.0">
                             <children>
                                 <SVGPath content="M12 2L2 7V17L12 22L22 17V7L12 2Z M16.5 8C16.5 10 15 11 12 12C9 13 7.5 14 7.5 16" styleClass="sidebar-logo-icon" />
                             </children>
                         </Pane>
-                        <Label styleClass="sidebar-title" text="SafeRoom" />
                     </children>
-                    <padding>
-                        <Insets left="16.0" />
-                    </padding>
                 </HBox>
                 <!-- Menü Butonları -->
                 <VBox fx:id="navBox" styleClass="sidebar-nav" VBox.vgrow="ALWAYS">
