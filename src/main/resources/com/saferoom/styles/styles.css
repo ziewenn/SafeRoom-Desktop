@@ -249,8 +249,9 @@
 }
 .sidebar-footer {
   -fx-padding: 0;
-  -fx-border-width: 0;
-  -fx-opacity: 0;
+  -fx-border-width: 1 0 0 0;
+  -fx-border-color: #334155;
+  -fx-opacity: 1;
 }
 .user-avatar {
   -fx-background-color: #a855f7;
@@ -261,6 +262,23 @@
   -fx-font-size: 14px;
   -fx-font-weight: bold;
   -fx-alignment: center;
+}
+
+.user-avatar-container {
+  -fx-pref-width: 32px;
+  -fx-pref-height: 32px;
+}
+
+.status-indicator {
+  -fx-background-color: #4ade80;
+  -fx-background-radius: 50%;
+  -fx-pref-width: 10px;
+  -fx-pref-height: 10px;
+  -fx-translate-x: 22px;
+  -fx-translate-y: 22px;
+  -fx-border-color: #0f172a;
+  -fx-border-width: 2px;
+  -fx-border-radius: 50%;
 }
 .user-name {
   -fx-font-weight: bold;

@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXB                        </JFXButton>
-                    </children>
-                </VBox>
-                <!-- User Info Section -->
-                <VBox styleClass="sidebar-footer">
-                    <children>
-                        <HBox alignment="CENTER_LEFT" spacing="12.0">
-                            <children>
-                                <Label styleClass="user-avatar" text="U" />
-                                <VBox>
-                                    <children>
-                                        <Label styleClass="user-name" text="Username" />
-                                        <Label styleClass="user-status" text="Online" />
-                                    </children>
-                                </VBox>
-                            </children>
-                        </HBox>
-                    </children>
-                </VBox>
-            </children>
-        </VBox>
-    </left>>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -85,16 +64,18 @@
                 </VBox>
                 <VBox styleClass="sidebar-footer">
                     <children>
-                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                        <HBox alignment="CENTER" spacing="12.0" styleClass="sidebar-user-info">
                             <children>
-                                <Label styleClass="user-avatar" text="U" />
-                                <VBox>
+                                <Pane styleClass="user-avatar-container">
                                     <children>
-                                        <Label styleClass="user-name" text="Username" />
-                                        <Label styleClass="user-status" text="Online" />
+                                        <Label styleClass="user-avatar" text="JD" />
+                                        <Pane styleClass="status-indicator" />
                                     </children>
-                                </VBox>
+                                </Pane>
                             </children>
+                            <padding>
+                                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                            </padding>
                         </HBox>
                     </children>
                 </VBox>
